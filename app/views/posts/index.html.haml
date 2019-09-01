@@ -1,59 +1,54 @@
-!!!
-%html
-  %head
-    %title ChatSpace
-  %body
-    .flash-box
-      .notice グループを作成しました
-    .wrapper
-      .chat-side
-        .side-header
-          .side-header__box
-            %p.side-header__box__user-name User0831
-            %ul.side-header__box__menu
-              %li.side-header__box__menu__new-group
-                %a{:href => "/groups/new"}
-                  %i.fa.fa-edit
-              %li.side-header__box__menu__edit-user
-                %a{:href => "/users/367/edit"}
-                  %i.fa.fa-cog
-        .groups
-          %a{:href => "/groups/601/messages"}
-            .group
-              %p.group__group-name hahaha
-              %p.group__latest-message さようなら
-          %a{:href => "/groups/600/messages"}
-            .group
-              %p.group__group-name hello
-              %p.group__latest-message まだメッセージがありません
-      .chat-main
-        .main-header
-          .main-header__left-box
-            %h2.main-header__left-box__current-group{"data-group_id" => "600"}
-              hahaha
-            %ul.main-header__left-box__member-list
-              Member：
-              %li.main-header__left-box__member-list__member User0831
-          %a{:href => "/groups/600/edit"}
-            .main-header__edit-btn Edit
-        .messages
-          .message{"data-message_id" => "1104"}
-            .message__upper-info
-              %p.message__upper-info__talker User0831
-              %p.message__upper-info__date 2019/08/31(Sat) 14:05:12
-            %p.message__text こんにちは！
-          .message{"data-message_id" => "1105"}
-            .message__upper-info
-              %p.message__upper-info__talker User0831
-              %p.message__upper-info__date 2019/08/31(Sat) 14:05:18
-            %p.message__text さようなら
-        .form
-          %form#new_message.new_message{"accept-charset" => "UTF-8", :action => "/groups/600/messages", :enctype => "multipart/form-data", :method => "post"}
-            %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-            %input{:name => "authenticity_token", :type => "hidden", :value => "tMs6TCB7zjphsti4BS2ECAs5vNVJM3EMZETwpq0LRHGjCHdiglasbpsrGgpm1njeCI2HHEY5e5/FAlbB30smTg=="}/
-            .input-box
-              %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
-              %label.input-box__image{:for => "message_image"}
-                %i.fa.fa-image
-                %input#message_image.input-box__image__file{:name => "message[image]", :type => "file"}/
-            %input.submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+.flash-box
+  .notice グループを作成しました
+.wrapper
+  .chat-side
+    .side-header
+      .side-header__box
+        %p.side-header__box__user-name User0831
+        %ul.side-header__box__menu
+          %li.side-header__box__menu__new-group
+            = link_to "#" do
+              %i.fa.fa-edit
+          %li.side-header__box__menu__edit-user
+            = link_to "#" do
+              %i.fa.fa-cog
+    .groups
+      = link_to "#" do
+        .group
+          %p.group__group-name hahaha
+          %p.group__latest-message さようなら
+      = link_to "#" do
+        .group
+          %p.group__group-name hello
+          %p.group__latest-message まだメッセージがありません
+  .chat-main
+    .main-header
+      .main-header__left-box
+        %h2.main-header__left-box__current-group{piyo: "#"}
+          hahaha
+        %ul.main-header__left-box__member-list
+          Member：
+          %li.main-header__left-box__member-list__member User0831
+      = link_to "#" do
+        .main-header__edit-btn Edit
+    .messages
+      .message{"data-message_id": "#"}
+        .message__upper-info
+          %p.message__upper-info__talker User0831
+          %p.message__upper-info__date 2019/08/31(Sat) 14:05:12
+        %p.message__text こんにちは！
+      .message{"data-message_id": "#"}
+        .message__upper-info
+          %p.message__upper-info__talker User0831
+          %p.message__upper-info__date 2019/08/31(Sat) 14:05:18
+        %p.message__text さようなら
+    .form
+      %form#new_message.new_message{"accept-charset": "UTF-8", action: "#", enctype: "#", method: "post"}
+        %input{name: "utf8", type: "hidden", value: "#"}/
+        %input{name: "authenticity_token", type: "hidden", value: "#"}/
+        .input-box
+          %input#message_content.input-box__text{name: "#", placeholder: "type a message", type: "text"}/
+          %label.input-box__image{for: "message_image"}
+            %i.fa.fa-image
+            %input#message_image.input-box__image__file{name: "#", type: "file"}/
+        %input.submit-btn{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}/
