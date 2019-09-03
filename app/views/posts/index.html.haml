@@ -6,7 +6,7 @@
           = current_user.name
         %ul.side-header__box__menu
           %li.side-header__box__menu__new-group
-            = link_to "#" do
+            = link_to "/groups/new" do
               %i.fa.fa-edit
           %li.side-header__box__menu__edit-user
             = link_to "/users/#{current_user.id}/edit" do
@@ -28,7 +28,7 @@
         %ul.main-header__left-box__member-list
           Member：
           %li.main-header__left-box__member-list__member User0831
-      = link_to "#" do
+      = link_to "/groups/1/edit" do
         .main-header__edit-btn Edit
     .messages
       .message{"data-message_id": "#"}
