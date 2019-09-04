@@ -39,20 +39,20 @@ li {
     border-radius: 2px;
     text-align: center;
   }
-  .label {
+  &__label {
     display: block;
     line-height: 50px;
     font-weight: bold;
     text-align: right;
   }
-  .input {
+  &__input {
     float: left;
     width: 100%;
     line-height: 30px;
     padding: 10px 15px;
     box-sizing: border-box;
   }
-  .action-btn {
+  &__action-btn {
     display: inline-block;
     padding: 12px 20px;
     color: #fff;
