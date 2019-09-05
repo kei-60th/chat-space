@@ -2,4 +2,5 @@
   .group
     %p.group__group-name
       = group.name
-    %p.group__latest-message まだメッセージはありません。
+    %p.group__latest-message 
+      = group.show_last_message
