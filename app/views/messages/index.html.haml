@@ -17,16 +17,18 @@
     .main-header
       .main-header__left-box
         %h2.main-header__left-box__current-group{piyo: "#"}
-          hahaha
+          = @group.name
         %ul.main-header__left-box__member-list
           Member：
-          %li.main-header__left-box__member-list__member User0831
+          %li.main-header__left-box__member-list__member
+            - @group.users.each do |user|
+              =user.name
       = link_to edit_group_path(1) do
         .main-header__edit-btn Edit
     .messages
       = render @messages
     .form
-      = form_for [@group, @message], url: group_messages_path do |f|
+      = form_for [@group, @message] do |f|
         .input-box
           = f.text_field :body, class: "input-box__text", placeholder: "type a message"
           %label.input-box__image{for: "message_image"}
