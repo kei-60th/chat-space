@@ -9,7 +9,7 @@ $(function(){
       image_data = ``
     }
 
-    var html = `<div class='message'>
+    var html = `<div class='message last'>
                   <div class='message__upper-info'>
                     <p class='message__upper-info__talker'>
                       ${message.user_name}
@@ -39,14 +39,19 @@ $(function(){
       contentType: false
     })
     .done(function(message){
-      console.log("OK")
       var html = buildMessage(message);
       $(".messages").append(html)
-      $('#input-box__text').val('')
-      debugger
+      $('.input-box__text').val('')
+      $('.input-box__image__file').val('')
+      $(".messages").animate({scrollTop:$(".messages")[0].scrollHeight},200)
+      $(".submit-btn").prop("disabled", false);
+
     })
     .fail(function(){
-      console.log("NG")
+      alert('メッセージを入力して下さい');
+      $(".submit-btn").prop("disabled", false);
     })
   })
 });
+
+
