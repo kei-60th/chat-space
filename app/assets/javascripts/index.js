@@ -1,4 +1,4 @@
-$(function(){
+document.addEventListener("turbolinks:load", function() {
 
   function buildMessage(message){
 
@@ -20,8 +20,8 @@ $(function(){
                   </div>
                   <p class='message__text'>
                     ${message.body}
-                    ${image_data}
                   </p>
+                    ${image_data}
                 </div>`
     return html;
   }
