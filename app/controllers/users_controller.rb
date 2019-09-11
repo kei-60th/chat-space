@@ -8,6 +8,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def new
+    binding.pry
+  end
+
   def edit
   end
 
