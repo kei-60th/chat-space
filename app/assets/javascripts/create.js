@@ -2,8 +2,8 @@ document.addEventListener("turbolinks:load", function() {
 
   function buildMessage(message){
 
-    if (message.image_url) {
-      image_data = `<img class="lower-message__image" src=${message.image_url} alt="19248 en 1" />`
+    if (message.imageUrl) {
+      image_data = `<img class="lower-message__image" src=${message.imageUrl} alt="19248 en 1" />`
     }
     else {
       image_data = ``
@@ -12,10 +12,10 @@ document.addEventListener("turbolinks:load", function() {
     var html = `<div class='message last'>
                   <div class='message__upper-info'>
                     <p class='message__upper-info__talker'>
-                      ${message.user_name}
+                      ${message.userName}
                     </p>
                     <p class='message__upper-info__date'>
-                      ${message.created_at}
+                      ${message.createdAt}
                     </p>
                   </div>
                   <p class='message__text'>
