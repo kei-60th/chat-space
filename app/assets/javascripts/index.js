@@ -17,7 +17,7 @@ $(document).on("turbolinks:load",function(){
 
 
   function addUser(userName,userId){const addUserContent=`<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-${userId}'>
-                            <input name='group[userIds][]' type='hidden' value='${userId}'>\n
+                            <input name='group[user_ids][]' type='hidden' value='${userId}'>\n
                             <p class='chat-group-user__name'>${userName}</p>
                             <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
                           </div>`;
@@ -30,7 +30,7 @@ $(document).on("turbolinks:load",function(){
     n.preventDefault();
     const keyword=$("#user-search-field").val();
     0!=keyword.length?
-    $.ajax({type:"GET",url:"/users",dataType:"json",data:{keyword:keyword,userIds:userIds}})
+    $.ajax({type:"GET",url:"/users",dataType:"json",data:{keyword:keyword,user_ids:userIds}})
 
     .done(
       function(users){
@@ -66,7 +66,4 @@ $(document).on("turbolinks:load",function(){
     $(this).parent().remove()
   })
 });
-
-
-
 
