@@ -34,13 +34,10 @@ $(document).on("turbolinks:load",function(){
 
     .done(
       function(users){
-        userSerchResult.empty();
-        if(users.length !== 0){
+        userSerchResult.empty(),
+        0!==users.length?
           users.forEach(function(user){getUser(user)})
-        }
-        else{
-          noUser("一致するユーザーが見つかりません")
-        }
+          :noUser("一致するユーザーが見つかりません")
       }
     )
     .fail(
@@ -53,7 +50,7 @@ $(document).on("turbolinks:load",function(){
 
 
   userSerchResult.on("click",".chat-group-user__btn--add",function(){
-    const userName=$(this).data("userName"),userId=$(this).data("userId");
+    const userName=$(this).attr("data-user-name"),userId=$(this).attr("data-user-id");
     userIds.push(userId),
     $(this).parent().remove(),
     addUser(userName,userId)
@@ -66,6 +63,12 @@ $(document).on("turbolinks:load",function(){
     $(this).parent().remove()
   })
 });
+
+
+
+
+
+
 
 
 
