@@ -9,7 +9,8 @@ document.addEventListener("turbolinks:load", function() {
       image_data = ``
     }
 
-    var html = `<div class='message last'>
+
+    var html = `<div class='message' data-message-id = ${message.id}>
                   <div class='message__upper-info'>
                     <p class='message__upper-info__talker'>
                       ${message.userName}
