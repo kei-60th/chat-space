@@ -1,16 +1,12 @@
 $(function() {
 
   var buildMessageHTML = function(message) {
-    console.log(message.imageUrl)
     if (message.imageUrl) {
-      console.log("if")
       image_data = `<img class="lower-message__image" src=${message.imageUrl} alt="19248 en 1" />`
     }
     else {
-      console.log("else")
       image_data = ``
     }
-    console.log(image_data)
 
     var html = `<div class='message' data-message-id = ${message.id}>
                   <div class='message__upper-info'>
@@ -42,8 +38,7 @@ $(function() {
       })
       .done(function(messages) {
         messagebox = ''
-        messages.forEach(function(message){(messagebox = buildMessageHTML(message))})
-        $(".messages").append(messagebox)
+        messages.forEach(function(message){messagebox = ($(".messages").append(buildMessageHTML(message)))})
         if (messagebox){
           $(".messages").animate({scrollTop:$(".messages")[0].scrollHeight},200)
         }
